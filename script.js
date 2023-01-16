@@ -170,14 +170,7 @@ function generatePassword() {
         {
           result_array.push(getRandom(numericCharacters));
         }
-        console.log(i);
         i++;
-        continue;
-      }
-      else
-      {
-        console.log(i);
-        continue;
       }
     }
     return result_array;
