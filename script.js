@@ -101,7 +101,7 @@ function isNumber(char) {
   return !isNaN(char);
 }
 //range random number
-function rantomInt(min, max)
+function randomInt(min, max)
 {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -131,7 +131,7 @@ function getPasswordOptions() {
   var choice_arr = [password_len, Character_type_lowercase,Character_type_Uppercase,Character_type_Special_characters,Character_type_Numeric];
   if(logic_gate === false)
   {
-    alert("Please select at least one character type");
+    return alert("Please select at least one character type");
   }
   //returns two values one of the password parameter and the or choice_arr
   return choice_arr;
@@ -139,18 +139,48 @@ function getPasswordOptions() {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  var random_choice = randomInt(0,(arr.length-1));
+  return arr[random_choice]
 }
 
 // Function to generate password with user input
 function generatePassword() {
     var choice_arr = getPasswordOptions();//the array contains [password_len, Character_type_lowercase, Character_type_Uppercase, Character_type_Special_characters, Character_type_Numeric]
     var i = 0;
+    var result_array = [];
     while(i < choice_arr[0])
     {
-
+      var random_character_type = randomInt(1,choice_arr.length);
+      var char_type = choice_arr[random_character_type]
+      if(char_type)
+      { // differentiating between different character types
+        if(random_character_type == 1)
+        {
+          result_array.push(getRandom(lowerCasedCharacters));
+        }
+        else if(random_character_type == 2)
+        {
+          result_array.push(getRandom(upperCasedCharacters));
+        }
+        else if(random_character_type == 3)
+        {
+          result_array.push(getRandom(specialCharacters));
+        }
+        else if(random_character_type == 4)
+        {
+          result_array.push(getRandom(numericCharacters));
+        }
+        console.log(i);
+        i++;
+        continue;
+      }
+      else
+      {
+        console.log(i);
+        continue;
+      }
     }
-    
+    return result_array;
 }
 
 // Get references to the #generate element
