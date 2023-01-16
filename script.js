@@ -100,6 +100,11 @@ function isNumber(char) {
 
   return !isNaN(char);
 }
+//range random number
+function rantomInt(min, max)
+{
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 // Function to prompt user for password options
 function getPasswordOptions() {
@@ -139,7 +144,12 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-    var choice_arr = getPasswordOptions();
+    var choice_arr = getPasswordOptions();//the array contains [password_len, Character_type_lowercase, Character_type_Uppercase, Character_type_Special_characters, Character_type_Numeric]
+    var i = 0;
+    while(i < choice_arr[0])
+    {
+
+    }
     
 }
 
