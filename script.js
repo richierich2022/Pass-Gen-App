@@ -88,8 +88,35 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+//function for checking if its a number
+function isNumber(char) {
+  if (typeof char !== 'string') {
+    return false;
+  }
+
+  if (char.trim() === '') {
+    return false;
+  }
+
+  return isNaN(char);
+}
+
 // Function to prompt user for password options
 function getPasswordOptions() {
+  var password_len = window.prompt("Please choose password length between 10 to 64 charcters");
+  if(isNumber(password_len))
+  {
+    return alert("please enter a numeric number");
+  }
+  else if(password_len < 10 || password_len > 64)
+  {
+    return alert("error password length");
+  }
+  var Character_type_lowercase = window.confirm("Would you want any Lowercases?");
+  var Character_type_Uppercase = window.confirm("Would you want any Uppercases?");
+  var Character_type_Numeric = window.confirm("Would you want any Numerics?");
+  var Character_type_Special_characters = window.confirm("Would you want any Special characters($@%&*,etc)");
+
 
 }
 
@@ -100,7 +127,7 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-
+    var Selection = getPasswordOptions();
 }
 
 // Get references to the #generate element
