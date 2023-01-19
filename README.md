@@ -29,7 +29,7 @@ Once all prompts are answered, the password should be generated and displayed in
 
 Please see below screenshot below:
 
-![Alt text](../../../../Desktop/Screenshot%202023-01-19%20at%2013.25.57.png)
+![Alt text](assets/Screenshot%202023-01-19%20at%2013.25.57.png)
 
 Link to deplyed application:
 
